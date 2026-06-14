@@ -1,0 +1,13 @@
+{
+  "name": "codificar",
+  "description": "",
+  "workspaces": [
+    "client",
+    "server"
+  ],
+  "scripts": {},
+  "type": "module",
+  "dependencies": {
+    "dotenv": "^17.4.2"
+  }
+}

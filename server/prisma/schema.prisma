@@ -1,0 +1,47 @@
+datasource db {
+  provider = "mysql"
+}
+
+generator client {
+  provider = "prisma-client"
+  output   = "../generated/prisma"
+}
+
+model Analistas {
+  id Int @id @default(autoincrement())
+  nome String @db.VarChar(75)
+  
+  chamados Chamados[]
+  @@map("analistas")
+}
+
+model Chamados {
+  id Int @id @default(autoincrement())
+  titulo String @db.VarChar(50)
+  descricao String @db.MediumText
+  idAnalista Int @map("analista_id")
+  idStatus Int @map("status_chamados_id")
+  idPrioridade Int @map("prioridade_chamados_id")
+  dataCriado DateTime @default(now())
+
+  analista Analistas @relation(fields: [idAnalista], references: [id])
+  statusChamados StatusChamados @relation(fields: [idStatus], references: [id])
+  prioridadeChamados PrioridadeChamados @relation(fields: [idPrioridade], references: [id])
+  @@map("chamados")
+}
+
+model StatusChamados {
+  id Int @id @default(autoincrement())
+  descricao String @db.VarChar(45)
+
+  chamado Chamados[]
+  @@map("status_chamados")
+}
+
+model PrioridadeChamados {
+  id Int @id @default(autoincrement())
+  descricao String @db.VarChar(45)
+
+  chamado Chamados[]
+  @@map("prioridade_chamados")
+} 

@@ -19,8 +19,7 @@ async function getManyChamados(req: Request, res: Response) {
     take: 50,
   });
 
-  if (chamados.length > 0) res.json(chamados);
-  else res.sendStatus(404);
+  res.json(chamados);
 }
 
 async function getManyChamadosBaixo(req: Request, res: Response) {
@@ -31,8 +30,7 @@ async function getManyChamadosBaixo(req: Request, res: Response) {
     },
   });
 
-  if (chamados.length > 0) res.json(chamados);
-  else res.sendStatus(404);
+  res.json(chamados);
 }
 
 async function getManyChamadosMedia(req: Request, res: Response) {
@@ -43,8 +41,7 @@ async function getManyChamadosMedia(req: Request, res: Response) {
     },
   });
 
-  if (chamados.length > 0) res.json(chamados);
-  else res.sendStatus(404);
+  res.json(chamados);
 }
 
 async function getManyChamadosAlta(req: Request, res: Response) {
@@ -55,8 +52,7 @@ async function getManyChamadosAlta(req: Request, res: Response) {
     },
   });
 
-  if (chamados.length > 0) res.json(chamados);
-  else res.sendStatus(404);
+  res.json(chamados);
 }
 
 async function postChamados(req: Request, res: Response) {
@@ -91,8 +87,7 @@ async function getManyChamadosAtendimento(req: Request, res: Response) {
     },
   });
 
-  if (chamados.length > 0) res.json(chamados);
-  else res.sendStatus(404);
+  res.json(chamados);
 }
 
 async function getManyChamadosResolvido(req: Request, res: Response) {
@@ -103,8 +98,7 @@ async function getManyChamadosResolvido(req: Request, res: Response) {
     },
   });
 
-  if (chamados.length > 0) res.json(chamados);
-  else res.sendStatus(404);
+  res.json(chamados);
 }
 
 async function getManyChamadosFechado(req: Request, res: Response) {
@@ -115,8 +109,7 @@ async function getManyChamadosFechado(req: Request, res: Response) {
     },
   });
 
-  if (chamados.length > 0) res.json(chamados);
-  else res.sendStatus(404);
+  res.json(chamados);
 }
 
 export {

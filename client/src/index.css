@@ -1,0 +1,21 @@
+:root {
+  font-family: Inter, system-ui, sans-serif;
+  color-scheme: light;
+  background: #eafaf1;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  min-height: 100%;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background: #eafaf1;
+}
